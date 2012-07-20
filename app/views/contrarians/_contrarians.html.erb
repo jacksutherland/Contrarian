@@ -1,0 +1,36 @@
+<% Contrarian.order(:name).each do |c| %>
+
+
+    <% if (defined?(displayAll) &&  displayAll) or c.display? %>
+        <div class="contrarian">
+
+          <%= link_to image_tag(c.image_url), contrarian_path(c)  %>
+
+          <div class="info">
+            <h3>
+              <%= link_to c.name, contrarian_path(c)  %>
+            </h3>
+            <h4>
+              <% if c.is_dead? %>
+                  <%= c.birth.strftime('%b %d, %Y') %>
+                  to
+                  <%= c.death.strftime('%b %d, %Y') %>
+              <% else %>
+                  Born: <%= c.birth.strftime('%b %d, %Y') %>
+              <% end %>
+            </h4>
+            <p><%= c.description %></p>
+            <% if defined?(showEdit) and showEdit and session[:user_id] %>
+                <div>
+                  <%= link_to 'Edit', edit_contrarian_path(c) %>
+                  <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+            <% end %>
+            <div class="clear"></div>
+          </div>
+
+        </div>
+    <% end %>
+
+
+<% end %>

@@ -1,0 +1,19 @@
+<% no_of_quotes = Quote.count %>
+
+<% if defined?(quantity) %>
+    <% no_of_quotes = quantity %>
+<% end %>
+
+<% Quote.limit(no_of_quotes).order('entered DESC').each do |q| %>
+
+    <%= link_to quote_path q do %>
+        <blockquote>
+            <p><span class="quotation">“</span> <%= q.quote %> <span class="quotation">”</span></p>
+          <span class="author"> - <%= q.contrarian.name %></span>
+        </blockquote>
+
+
+    <% end %>
+
+<% end %>
+

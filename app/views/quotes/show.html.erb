@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class="quotes">
+
+<blockquote>
+  <p><span class="quotation">“</span> <%= @quote.quote %> <span class="quotation">”</span></p>
+  <span class="author"> - <%=  link_to @quote.contrarian.name, contrarian_path(@quote.contrarian) %></span>
+
+  <% if session[:user_id] %>
+      <%= link_to 'Edit', edit_quote_path(@quote) %>
+      <%= link_to 'Delete', @quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+</blockquote>
+
+</div>
+

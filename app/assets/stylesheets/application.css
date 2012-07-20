@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+    margin:0;
+    background-color: #401f0e;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: .85em;
+    line-height: 18px;
+    color:#FFF;
+}
+
+h2 { font-family: helvetica, sans-serif; color: #3E9578; font-size: 1.65em; }
+h3 { color: #A06242; margin-top: 0; }
+h4 { font-family: helvetica, sans-serif; color: #3E9578; margin-top: 0; }
+
+textarea { height: 150px; }
+
+.clear { clear: both; }
+
+.right-align { text-align: right; }
+
+.float-right { float: right; }
+
+a, a:visited, a:hover {
+    color:#bb934b;
+    text-decoration: none;
+    border-bottom: dotted 1px #bb934b;
+}
+
+a:hover {
+    text-decoration: none;
+    border-bottom: solid 1px #bb934b;
+}
+
+#nav {
+    margin:15px 0px 40px;
+    text-align: right;
+    font-size: .9em;
+}
+#nav a, #nav a:visited {
+    font-weight: bold;
+    border-bottom: none;
+    margin-left:20px;
+    color:#A06242;
+}
+
+#nav a.active {
+    color:#597694;
+}
+
+#nav a:hover {
+    border-bottom: dotted 2px #597694;
+    color:#597694;
+}
+
+#main{
+    max-width:850px;
+    margin:0 auto 10px;
+}
+
+#header{
+    height:160px;
+    background: url("header.jpg") no-repeat center 0px;
+    border-bottom: solid 1px #bb934b;
+}
+
+#footer{
+    margin-top: 30px;
+    padding: 30px 0 50px;
+    background-color: #A06242;
+    /*border-top: dotted 10px #A06242;*/
+    text-align: center;
+    font-weight: bold;
+    font-size:.8em;
+    color: #401f0e;
+}
+#footer a, #footer a:visited{
+    margin: 0 10px;
+    color: #401f0e;
+    border-color: #401f0e;
+    border-bottom-width: 2px;
+    font-weight: bold;
+}
+#footer a:hover{
+    border-bottom-width: 1px;
+}
+
+#content{
+    margin:0px;
+}
+
+.editlinks { }
+
+.edit_form{
+    background-color: #FFF;
+    color:#333;
+    width:500px;
+    margin:0 auto;
+    padding:10px 10px 5px;
+}
+.edit_form h2{
+    background-color: #2A1105;
+    padding:10px;
+    margin:0 0 15px;
+}
+.edit_form label{
+    width:100px;
+    float:left;
+    font-weight: bold;
+}
+.edit_form .field{
+    margin-bottom: 20px;
+}
+.edit_form .checkbox label{
+    width:auto;
+    float:left;
+    font-weight: bold;
+}
+.edit_form input{
+    padding:4px;
+    margin-bottom: 10px;
+}
+.edit_form input.button{
+    padding:5px 20px;
+}
+.edit_form input.cancel{
+    padding:5px 20px;
+    float:right;
+}
+
+@media all and (max-width: 920px)  {
+    #content, #nav { margin-left: 20px; margin-right: 20px; }
+}
+
+@media all and (max-width: 660px)  {
+    #nav { text-align: left; margin-left: 0; margin-right: 10px; }
+}

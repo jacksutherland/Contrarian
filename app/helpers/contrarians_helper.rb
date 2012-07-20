@@ -1,0 +1,2 @@
+module ContrariansHelper
+end

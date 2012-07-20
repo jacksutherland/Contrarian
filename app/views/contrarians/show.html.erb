@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<div class="contrarian">
+
+  <%= image_tag(@contrarian.image_url)  %>
+
+  <div class="info">
+    <h3>
+      <%= @contrarian.name  %>
+    </h3>
+    <h4>
+      <% if @contrarian.is_dead? %>
+          <%= @contrarian.birth.strftime('%b %d, %Y') %>
+          to
+          <%= @contrarian.death.strftime('%b %d, %Y') %>
+      <% else %>
+          Born: <%= @contrarian.birth.strftime('%b %d, %Y') %>
+      <% end %>
+    </h4>
+    <p><%= @contrarian.description %></p>
+    <% if defined?(showEdit) and showEdit and session[:user_id] %>
+        <div>
+          <%= link_to 'Edit', edit_contrarian_path(@contrarian) %>
+          <%= link_to 'Delete', @contrarian, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    <% end %>
+    <div class="clear"></div>
+  </div>
+
+</div>
+
+<% if session[:user_id] %>
+    <%= link_to 'Edit', edit_contrarian_path(@contrarian) %>
+<% end %>

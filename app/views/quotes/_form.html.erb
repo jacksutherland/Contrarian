@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for(@quote) do |f| %>
+  <% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% @quote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :contrarian, "Author" %>
+      <%= f.select "contrarian_id", Contrarian.all.map {|c| [c.name, c.id]} %>
+      <%= link_to("Add an Author", new_contrarian_path) %>
+    </div>
+  <div class="field">
+    <%= f.label :quote %>
+    <%= f.text_area :quote %>
+  </div>
+
+  <div class="actions">
+    <% if session[:user_id] %>
+        <%= f.submit "Save", :class => "button" %>
+    <% else %>
+        <%= f.submit "Submit", :name => 'email', :class => "button" %>
+    <% end %>
+    <%= f.submit "Cancel", :name => 'cancel', :class => 'cancel' %>
+  </div>
+<% end %>

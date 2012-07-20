@@ -1,0 +1,15 @@
+You've received a new Contrarian Submission
+
+Name: <%= @contrarian.name %>
+
+Birth: <%= @contrarian.birth %>
+
+Is Dead?: <%= @contrarian.is_dead %>
+
+<% if @contrarian.is_dead %>
+Death: <%= @contrarian.death %>
+<% end %>
+
+Description: <%= @contrarian.description %>
+
+Image: <%= @contrarian.image_url %>

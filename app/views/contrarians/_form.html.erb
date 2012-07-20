@@ -1,0 +1,56 @@
+
+<p id="notice"><%= notice %></p>
+
+<%= form_for(@contrarian) do |f| %>
+  <% if @contrarian.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contrarian.errors.count, "error") %> prohibited this contrarian from being saved:</h2>
+
+      <ul>
+      <% @contrarian.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <% if session[:user_id] %>
+    <div class="field checkbox">
+      <%= f.label :display, "Display on home page?" %>
+      <%= f.check_box :display %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :birth %>
+    <%= f.date_select :birth, :start_year => 1020, :order => [:month, :day, :year] %>
+  </div>
+    <div class="field checkbox">
+      <%= f.label :is_dead, "Is Deceased?" %>
+      <%= f.check_box :is_dead %>
+    </div>
+  <div class="field deathfield">
+    <%= f.label :death %>
+    <%= f.date_select :death, :start_year => 1020, :order => [:month, :day, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+    <div class="field">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+    </div>
+
+  <div class="actions">
+    <% if session[:user_id] %>
+        <%= f.submit "Save", :class => "button" %>
+    <% else %>
+        <%= f.submit "Submit", :name => 'email', :class => "button" %>
+    <% end %>
+    <%= f.submit "Cancel", :name => 'cancel', :class => 'cancel' %>
+  </div>
+<% end %>

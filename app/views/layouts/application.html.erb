@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Simple Contrarian</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="main">
+
+<div id="header">
+  <div id="header-img"></div>
+</div>
+
+<div id="nav">
+  <%= link_to("Home", home_path) %>
+  <%= link_to("Blog", "http://simplecontrarian.wordpress.com") %>
+  <%= link_to("Submit a Contrarian", new_contrarian_path) %>
+  <%= link_to("Submit a Quote", new_quote_path) %>
+  <% if session[:user_id] %>
+      <%= link_to "Logout #{user_name}", logout_path %>
+  <% else %>
+    <%= link_to "Login", login_path %>
+  <% end %>
+</div>
+
+<div id="content">
+<%= yield %>
+</div>
+
+</div>
+
+<div id="footer">
+
+  <%= link_to("Visit us on Facebook", "https://www.facebook.com/SimpleContrarian") %>
+  •
+  <%= link_to("Visit the Blog", "http://simplecontrarian.wordpress.com") %>
+  •
+  <%= link_to("Site by SouthTunnel", "http://www.southtunnel.com") %>
+
+</div>
+
+</body>
+</html>

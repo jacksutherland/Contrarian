@@ -1,0 +1,123 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  margin:60px 0;
+}
+
+.latestquote, .quotes
+{
+  margin-bottom: 50px;
+
+  blockquote{
+    margin:10px 0 20px 0;
+    padding:20px 40px;
+    border:solid 2px #A06242;
+    background-color: #2A1105;
+    color:#EEE;
+    border-radius:10px;
+
+    p { margin: 0; text-align: justify; line-height: 2em;  }
+
+    .quotation {
+      font-family:times;
+      font-size:2.3em;
+      color:#3E9578;
+      vertical-align: bottom;
+      font-weight: bold;
+    }
+
+    .author{
+      display: block;
+      width:100%;
+      text-align: right;
+      color: #3E9578;
+      font-weight: bold;
+      margin-top: 10px;
+
+      a { border:none; color: #3E9578; }
+      a:hover { border-bottom: dotted 2px #3E9578; }
+    }
+  }
+
+  a:hover blockquote{  background-color: #301D14; }
+}
+
+.latestquote
+{
+  border:none;
+  background-color: #2A1105;
+  width:70%;
+  margin:30px auto 80px;
+  border-radius: 10px;
+  padding:20px;
+
+  h2 { margin-top: 0; }
+
+  .author{
+    display: block;
+    width:100%;
+    text-align: right;
+    color: #BB934B;
+    font-weight: bold;
+    margin-top: 10px;
+
+    a { border:none; color: #BB934B; }
+    a:hover { border-bottom: dotted 2px #BB934B; }
+  }
+
+  a {
+    text-decoration:none;
+  }
+  img{
+    float:left;
+    width:250px;
+    margin-right: 15px;
+    border: solid 2px #A06242;
+  }
+
+  a:hover img{
+    border: dotted 2px #A06242;
+  }
+}
+
+  .contrarians{
+  border-bottom: solid 2px #2A1105;
+  margin-bottom: 15px;
+}
+
+.contrarian{
+
+  margin:20px 0;
+  padding-top: 20px;
+  border-top: solid 2px #2A1105;
+
+  a {
+    text-decoration:none;
+  }
+    img{
+      float:left;
+      width:150px;
+      margin-right: 15px;
+      border: solid 2px #A06242;
+    }
+
+  a:hover img{
+    border: dotted 2px #A06242;
+  }
+
+  h3 { margin-bottom: 5px; }
+
+  h3 a{
+    color: #bb934b;
+    border:none;
+  }
+  h3 a:hover{
+    border-bottom: dotted 2px #bb934b;
+  }
+
+  p{
+    color:#FFF;
+  }
+}

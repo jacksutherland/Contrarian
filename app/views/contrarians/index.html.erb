@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2>The Contrarians</h2>
+
+<%= link_to 'Add a New Contrarian', new_contrarian_path %>
+
+<div class="contrarians">
+  <%= render "contrarians/contrarians", :displayAll => true, :showEdit => true %>
+</div>
+
+

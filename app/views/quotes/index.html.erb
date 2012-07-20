@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h2>The Contrarian's Quotes</h2>
+
+<%= link_to 'Add a New Quote', new_quote_path %>
+
+<div class="allquotes">
+  <%= render "quotes", :showEdit => true %>
+</div>
+
+<br />
+
+

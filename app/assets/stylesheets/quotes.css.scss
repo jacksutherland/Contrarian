@@ -1,0 +1,38 @@
+// Place all the styles related to the Quotes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.allquotes
+{
+  margin-bottom: 50px;
+
+  blockquote{
+    margin:5px 0 5px 0;
+    padding:10px;
+    color:#EEE;
+    border-radius:10px;
+
+    p { display:inline; margin: 0; text-align: justify; line-height: 2em;  }
+
+    .quotation {
+      font-family:times;
+      font-size:1.5em;
+      color:#3E9578;
+      vertical-align: bottom;
+      font-weight: bold;
+    }
+
+    .author{
+      display: inline;
+      color: #3E9578;
+      font-weight: bold;
+      margin-top: 0;
+
+
+    }
+  }
+
+  a:hover blockquote{  background-color: #2A1105; }
+
+  .editlinks { margin: -10px 0 0 10px; }
+}

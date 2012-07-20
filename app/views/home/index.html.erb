@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<div class="latestquote">
+
+  <h2>Today's Words of Wisdom</h2>
+
+  <%= link_to image_tag(@quote.contrarian.image_url), contrarian_path(@quote.contrarian)  %>
+
+  <p><span class="quotation">“</span> <%= @quote.quote %> <span class="quotation">”</span></p>
+
+  <span class="author">- <%=  link_to @quote.contrarian.name, contrarian_path(@quote.contrarian) %></span>
+
+  <div class="clear"></div>
+
+</div>
+
+
+<div class="container">
+
+  <h2>Introducing the Contrarians</h2>
+
+<div class="contrarians">
+    <%= render "contrarians/contrarians", :displayAll => false %>
+</div>
+  <div class="right-align">
+    <%= link_to "see all contrarians", contrarians_path %>
+  </div>
+
+</div>
+
+<div class="container">
+<h2>Their Wisdom</h2>
+
+<div class="quotes">
+  <%= render "quotes/quotes", :quantity => 3 %>
+  <div class="right-align">
+    <%= link_to "see all quotes", quotes_path %>
+  </div>
+</div>
+</div>
